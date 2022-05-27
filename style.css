@@ -141,12 +141,17 @@ header, footer {
     height: 100%;
     width: 100%;
 }
-.enlarge {
+/*hover effects*/
+.enlarge, .change-background {
     transition: all 200ms ease;
 }
 .enlarge:hover {
     transform: scale(1.1);
 }
+.change-background:hover {
+    background-color: #a280d1;
+}
+/*end hover effects*/
 .game-restart {
     color: var(--low-white);
     background-color: var(--dark-gray);
