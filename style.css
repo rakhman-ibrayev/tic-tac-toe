@@ -22,6 +22,7 @@
     font-display: swap;
 }
 
+
 /*COLORS, TYPOGRAPHY and GAPS*/
 :root {
     /*colors*/
@@ -33,14 +34,17 @@
     --fs-xl: 4rem;
     --fs-l: 3rem;
     --fs-m: 2rem;
-    --fs-s: 1rem;
 
     /*gaps*/
     --gap-xl: 3rem;
     --gap-l: 2rem;
     --gap-m: 1rem;
 }
-
+@media (max-width: 500px) {
+    :root {
+        --fs-xl: 2.5rem;
+    }
+}
 .text-extra-large {
     font-size: var(--fs-xl);
 }
@@ -53,6 +57,7 @@
 .text-small {
     font-size: var(--fs-s);
 }
+
 
 /*UTILITY CLASSES*/
 .text-center {
@@ -81,30 +86,70 @@ h1, button, body {
 	font-size: 100%;
 	font: inherit;
 }
-
 a {
     text-decoration: none;
 }
-
 a:visited {
     color: inherit;
 }
-
 body {
     box-sizing: border-box;
     height: 100vh;
     background-color: var(--low-white);
     font-family: 'Gilroy';
+    line-height: 1;
 }
-
 main {
     flex-grow: 1;
     width: 90%;
     max-width: 700px;
     margin-inline: auto;
+    padding-bottom: var(--gap-l);
+}
+section {
+    margin-inline: auto;
+    padding-top: var(--gap-l);
 }
 
-section {
-    width: 90%;
-    margin-inline: auto;
+
+/*HEADER and FOOTER*/
+header, footer {
+    padding-block: var(--gap-l);
+    background-color: var(--purple);
+}
+
+
+/*MAIN*/
+.game-board {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.box {
+    position: relative;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+.box::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+.box .content {
+    font-size: clamp(3rem, 15vw, 10rem);
+    text-transform: uppercase;
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+}
+.enlarge {
+    transition: all 200ms ease;
+}
+.enlarge:hover {
+    transform: scale(1.1);
+}
+.game-restart {
+    color: var(--low-white);
+    background-color: var(--dark-gray);
+    padding: 1rem 2.5rem;
+    cursor: pointer;
 }
