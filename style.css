@@ -2,10 +2,10 @@
 @font-face {
     font-family: 'Gilroy';
     src: local('Gilroy Bold'), local('Gilroy-Bold'),
-        url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Gilroy-Bold.woff2') format('woff2'),
-        url('../fonts/Gilroy-Bold.woff') format('woff'),
-        url('../fonts/Gilroy-Bold.ttf') format('truetype');
+        url('fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Gilroy-Bold.woff2') format('woff2'),
+        url('fonts/Gilroy-Bold.woff') format('woff'),
+        url('fonts/Gilroy-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -13,10 +13,10 @@
 @font-face {
     font-family: 'Gilroy';
     src: local('Gilroy Semibold'), local('Gilroy-Semibold'),
-        url('../fonts/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Gilroy-Semibold.woff2') format('woff2'),
-        url('../fonts/Gilroy-Semibold.woff') format('woff'),
-        url('../fonts/Gilroy-Semibold.ttf') format('truetype');
+        url('fonts/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Gilroy-Semibold.woff2') format('woff2'),
+        url('fonts/Gilroy-Semibold.woff') format('woff'),
+        url('fonts/Gilroy-Semibold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -82,7 +82,16 @@ h1, button, body {
 	font: inherit;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
 body {
+    box-sizing: border-box;
     height: 100vh;
     background-color: var(--low-white);
     font-family: 'Gilroy';
@@ -90,9 +99,12 @@ body {
 
 main {
     flex-grow: 1;
+    width: 90%;
     max-width: 700px;
+    margin-inline: auto;
 }
 
 section {
     width: 90%;
+    margin-inline: auto;
 }
