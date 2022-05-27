@@ -1,0 +1,98 @@
+/*FONTS*/
+@font-face {
+    font-family: 'Gilroy';
+    src: local('Gilroy Bold'), local('Gilroy-Bold'),
+        url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Gilroy-Bold.woff2') format('woff2'),
+        url('../fonts/Gilroy-Bold.woff') format('woff'),
+        url('../fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: local('Gilroy Semibold'), local('Gilroy-Semibold'),
+        url('../fonts/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Gilroy-Semibold.woff2') format('woff2'),
+        url('../fonts/Gilroy-Semibold.woff') format('woff'),
+        url('../fonts/Gilroy-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*COLORS, TYPOGRAPHY and GAPS*/
+:root {
+    /*colors*/
+    --low-white: #f0f2f0;
+    --dark-gray: #131413;
+    --purple: #a280d1;
+
+    /*font sizes*/
+    --fs-xl: 4rem;
+    --fs-l: 3rem;
+    --fs-m: 2rem;
+    --fs-s: 1rem;
+
+    /*gaps*/
+    --gap-xl: 3rem;
+    --gap-l: 2rem;
+    --gap-m: 1rem;
+}
+
+.text-extra-large {
+    font-size: var(--fs-xl);
+}
+.text-large {
+    font-size: var(--fs-l);
+}
+.text-medium {
+    font-size: var(--fs-m);
+}
+.text-small {
+    font-size: var(--fs-s);
+}
+
+/*UTILITY CLASSES*/
+.text-center {
+    text-align: center;
+}
+.grid {
+    display: grid;
+}
+.flex {
+    display: flex;
+}
+.column {
+    flex-direction: column;
+}
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*SET-UP and RESETS*/
+h1, button, body {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--low-white);
+    font-family: 'Gilroy';
+}
+
+main {
+    flex-grow: 1;
+    max-width: 700px;
+}
+
+section {
+    width: 90%;
+}
