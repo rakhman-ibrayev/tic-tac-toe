@@ -1,6 +1,7 @@
 function GameBoard() {
     // private properties
     let _boxes = ['', '', '', '', '', '', '', '', ''];
+    let _winningCombination = [];
     let _winningCombinations = [
         [0, 1, 2],
         [3, 4, 5],
@@ -17,7 +18,7 @@ function GameBoard() {
         _boxes[index] = figure;
     }
 
-    // public method checks if a figure is in a winning combination
+    // public method checks if a figure is in the winning combination
     function isFigureAligned(figure) {
         for (let i = 0; i < _winningCombinations.length; i++) {
             let numWinningIndicesApps = 0;
@@ -27,6 +28,7 @@ function GameBoard() {
                     numWinningIndicesApps++;
                 }
                 if (numWinningIndicesApps === 3) {
+                    _winningCombination = _winningCombinations[i];
                     return true;
                 }
             }
@@ -38,9 +40,14 @@ function GameBoard() {
         return _boxes;
     }
 
+    function getWinningCombination() {
+        return _winningCombination;
+    }
+
     return {
         populateBox,
         isFigureAligned,
-        getBoxes
+        getBoxes,
+        getWinningCombination
     }
 }
