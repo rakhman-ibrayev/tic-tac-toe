@@ -24,6 +24,10 @@ let game = (function() {
             return;
         }
 
+        if (_domBoxes[boxIndex].textContent !== '') {
+            return;
+        }
+
         _currentPlayer.attack(_gameBoard, boxIndex);
         _render(_domBoxes[boxIndex], _currentPlayer.getFigure());
 
