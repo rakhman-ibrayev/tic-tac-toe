@@ -120,6 +120,9 @@ header, footer {
 
 
 /*MAIN*/
+.which-player {
+    text-transform: uppercase;
+}
 .game-board {
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -133,13 +136,16 @@ header, footer {
     display: block;
     padding-top: 100%;
 }
-.box .content {
+.box .box-content {
     font-size: clamp(3rem, 15vw, 10rem);
     text-transform: uppercase;
     position: absolute;
     top: 0; left: 0;
     height: 100%;
     width: 100%;
+}
+.announce-winner {
+    height: 2rem;
 }
 /*hover effects*/
 .enlarge, .change-background {
@@ -149,7 +155,7 @@ header, footer {
     transform: scale(1.1);
 }
 .change-background:hover {
-    background-color: #a280d1;
+    background-color: var(--purple);
 }
 /*end hover effects*/
 .game-restart {
