@@ -8,6 +8,7 @@ let game = (function() {
 
     // cache DOM elements
     let _currentPlayerMessage = document.querySelector('.which-player');
+    let _oponentChoice = document.querySelector('.checkbox');
     let _domBoxes = document.querySelectorAll('.box-content');
     let _winnerMessage = document.querySelector('.announce-winner');
     let _btnRestart = document.querySelector('.game-restart');
@@ -19,7 +20,7 @@ let game = (function() {
     _btnRestart.addEventListener('click', _reset);
 
     // private methods
-    function _play(boxIndex) {
+    function _playRound(boxIndex) {
         if (_isGameEnded) {
             return;
         }
@@ -40,6 +41,28 @@ let game = (function() {
 
         _switchCurrentPlayer();
         _setCurrentPlayerMessage(_currentPlayer);
+    }
+
+    function _getRandomIndex() {
+        return Math.floor(Math.random() * (_domBoxes.length - 1));
+    }
+
+    function _getEmptyBoxIndices(board) {
+        return board.filter(box => box === '');
+    }
+
+    function _play(boxIndex) {
+        _playRound(boxIndex);
+
+        if (_oponentChoice.checked && _getEmptyBoxIndices(_gameBoard.getBoxes()).length > 1) {
+            let randomIndex = _getRandomIndex();
+
+            while (_domBoxes[randomIndex].textContent !== '') {
+                randomIndex = _getRandomIndex();
+            }
+
+            _playRound(randomIndex);
+        }
     }
 
     function _render(box, figure) {
