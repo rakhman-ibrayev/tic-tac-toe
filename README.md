@@ -2,7 +2,7 @@
 
 ([assignment specification](https://www.theodinproject.com/lessons/node-path-javascript-tic-tac-toe))
 
-This is a simple Tic Tac Toe game from The Odin Project JavaScript course.
+This is a simple Tic Tac Toe game project assignment from The Odin Project JavaScript course.
 
 ## Topics covered
 
