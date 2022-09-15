@@ -14,4 +14,4 @@ This is a simple Tic Tac Toe game project assignment from The Odin Project JavaS
   - CSS flex display property
   - Different CSS positionings
 
-## Check out the [demo](https://rakhmanibrayev.github.io/tic-tac-toe/) to see the project in action
+## Check out the [demo](https://rakhman-ibrayev.github.io/tic-tac-toe/) to see the project in action
